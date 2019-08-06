@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# For Docker Hub automated build
+git submodule update --init --recursive

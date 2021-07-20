@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail;IFS=$'\t\n'
+
+cd "$(dirname "${0}")"
+
+IMAGE="hugojosefson/plan-c:latest"
+
+docker build \
+    --tag "${IMAGE}" \
+    .
+
+
+if [[ "${1:-""}" == "--push" ]]; then
+  docker push "${IMAGE}"
+fi
